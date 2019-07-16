@@ -16,6 +16,7 @@ app.on("ready", () => {
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 });
 
+// Get Info from client
 ipcMain.on("video:submit", (event, path) => {
   ffmpeg.ffprobe(path, (err, metadata) => {
     // Send duration data
